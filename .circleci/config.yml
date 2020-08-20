@@ -7,10 +7,12 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - node/install-packages
       - run:
           command: npm run lint
+      - run:
+          command: npm run test
 workflows:
   node-tests:
     jobs:
-      - lint
-      - node/test
+      - check
