@@ -3,9 +3,6 @@ orbs:
   node: circleci/node@3.0.0
 jobs:
   lint:
-    executor:
-      name: node/default
-      tag: '13'
     steps:
       - checkout
       - run:
