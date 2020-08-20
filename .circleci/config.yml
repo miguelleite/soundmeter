@@ -7,7 +7,10 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - node/install-packages
+      - node/with-cache:
+          steps:
+            - run: npm install
+      #   - node/install-packages
       - run:
           command: npm run lint
           name: Run NPM lint
@@ -18,3 +21,4 @@ workflows:
   node-tests:
     jobs:
       - check
+    #   - node/test
