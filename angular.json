@@ -84,6 +84,16 @@
             "exclude": ["**/node_modules/**", "!apps/client/**/*"]
           }
         },
+        "start": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "npm run ng -- serve client --live-reload false",
+              "npm run ng -- serve api"
+            ],
+            "parallel": true
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
