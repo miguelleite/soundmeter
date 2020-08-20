@@ -10,8 +10,10 @@ jobs:
       - node/install-packages
       - run:
           command: npm run lint
+          name: Run NPM lint
       - run:
           command: npm run test
+          name: Run NPM tests
 workflows:
   node-tests:
     jobs:
