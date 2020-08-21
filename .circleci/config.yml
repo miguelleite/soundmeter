@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
 jobs:
-  lint:
+  check:
     executor:
       name: node/default
     steps:
@@ -11,11 +11,10 @@ jobs:
       - run:
           command: npm run lint
           name: Run NPM lint
-    #   - run:
-    #       command: npm run test
-    #       name: Run NPM tests
+      - run:
+          command: npm run test
+          name: Run NPM tests
 workflows:
   node-tests:
     jobs:
-      - lint
-      - node/test
+      - check
