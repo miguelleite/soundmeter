@@ -19,6 +19,6 @@ workflows:
   node-tests:
     jobs:
       - check
-    #   - heroku/deploy-via-git:
-    #       requires:
-    #         - check
+      - heroku/deploy-via-git:
+          requires:
+            - check
