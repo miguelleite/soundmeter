@@ -11,7 +11,7 @@ jobs:
       - node/install-packages
       - run:
           command: npm run lint
-          name: Run NPM lint
+          name: Run NPM linter
       - run:
           command: npm run test
           name: Run NPM tests
